@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bittersweet Page</title>
+
+<!-- Castro Script Font -->
+<link href="https://fonts.googleapis.com/css2?family=Castro+Script&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Castro Script', cursive;
+  }
+
+  /* Welcoming Page */
+  #welcome-page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+  }
+
+  #welcome-page h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #okay-btn {
+    padding: 12px 32px;
+    font-size: 1.5rem;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Castro Script', cursive;
+  }
+
+  #okay-btn:hover {
+    background: white;
+    color: black;
+  }
+
+  /* Main Website */
+  #main-site {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  /* Background Slideshow */
+  #background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 2s ease-in-out;
+  }
+
+  /* Content page */
+  #content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    text-shadow: 0 0 10px black;
+  }
+
+  #content h2 {
+    font-size: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Welcoming Page -->
+<div id="welcome-page">
+  <h1>I just want to let you know</h1>
+  <button id="okay-btn" onclick="enterSite()">Okay</button>
+</div>
+
+<!-- Main Website -->
+<div id="main-site">
+  <div id="background"></div>
+  <div id="content">
+    <h2>Welcome</h2>
+  </div>
+</div>
+
+<script>
+  const images = ["image1.jpeg", "image2.jpeg"];
+  let index = 0;
+
+  function changeBackground() {
+    document.getElementById("background").style.backgroundImage = `url('${images[index]}')`;
+    index = (index + 1) % images.length;
+  }
+
+  function enterSite() {
+    document.getElementById("welcome-page").style.display = "none";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "flex";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+    document.getElementById("main-site").style.display = "block";
+
+    document.getElementById("main-site").style.display = "block";
+
+    // Play music after click (bypass autoplay restriction)
+    document.getElementById("bg-music").play();
+
+    // Start background slideshow
+    changeBackground();
+    setInterval(changeBackground, 5000);
+  }
+
+  // Set initial background before entering
+  changeBackground();
+</script>
+
+</body>
+</html>
+
